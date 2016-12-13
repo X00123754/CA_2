@@ -42,8 +42,9 @@ FeetToMetres() {
 feetAndInchesToMeters() {
     this.orMeters = this.feet * .3048 + this.inches * .0254
   }
-inchesToMeters() {
-  this.inches = this.orMeters * .0254
+orMetersTofeetAndInches(){ 
+  this.feet = Math.floor(this.orMeters * 3.28084);
+  this.inches = Math.round((this.orMeters * 39.7 / 12) -  Math.floor(this.orMeters * 3.28084) * (Math.round(0.3048 *  0.0254))) ;
 }
 BMICalculation(){
   this.bmi = this.orKgs/(this.orMeters*this.orMeters);
@@ -56,7 +57,7 @@ BMICalculation(){
   else if(this.bmi > 25 && this.bmi <= 30){
     this.type = "Overweight";
   }
-  else if(this.bmi > 30){
+  else {
     this.type = "Obese";
   }
 }
