@@ -1,0 +1,35 @@
+body {
+  color: #666666;
+}
+
+main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+li a {
+    color: #C0C0C0;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #C0C0C0;
+    color: #000;
+}
+
+.navbar {
+  border-radius: 0;
+}
+
+.bmi-result span {
+ color: green;
+}
+
+.instruction {
+  padding-top: 20px;
+}

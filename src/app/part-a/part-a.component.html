@@ -1,0 +1,26 @@
+<section class="container col-md-6 col-md-offset-3">
+  <header>
+    <h2>Temperature Unit Convertor</h2>
+  </header>
+ <router-outlet></router-outlet>
+  <form name="convert">
+    <div class="form-group">
+      <label for="Celcius">Celcius:</label>
+      <input [(ngModel)]="Celcius" name="Celcius" (keyup.enter)=" CelciusToFahrenheit()" type="number" step="any" class="form-control" placeholder="Enter a number">
+    </div>
+
+    <div class="form-group">
+      <label for="Fahrenheit">Fahrenheit:</label>
+      <input [(ngModel)]="Fahrenheit" name="Fahrenheit" (keyup.enter)=" fahrentheitToCelcius()" type="number" step="any" class="form-control" placeholder="Enter a number">   
+    </div>
+
+    <div>
+      <button class="btn btn-primary">Convert</button>
+    </div>
+  </form>
+
+  <div class="conversions">
+    <p>Total Conversions: {{counter}}</p>
+  </div>
+ 
+</section>
