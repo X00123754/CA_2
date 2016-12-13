@@ -1,73 +1,58 @@
-<section class="well">
-  <header>
-    <h2 class="text-center">BMI Calculator</h2>
-  </header>
+<div class ="jumbotron" align=center>
+    <h2>BMI Calculator</h2>
 
-  <form class="container-fluid">
-    <div class="row">
-      <h3 class="text-center">Enter Your Weight</h3>
-
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label for="stone" class="text-center center-block">Stone</label>
-          <input [(ngModel)]="stone" name="stone" (keyup.enter)=" StoneToKgs()" type="number" step="any" class="form-control" >
+    <form>
+        <div class="row">
+            <h3>Enter Your Weight</h3>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h5>Stone</h5>
+            <input [(ngModel)]="stone" name="stone" (keyup)=" StoneToKgs()" type="number" step="any" class="form-control" >
+            </div>
+            </div>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h5>Pounds</h5>
+            <input [(ngModel)]="pounds" name="pounds"(keyup)=" StoneAndPoundToKgs()" type="number" step="any" class="form-control" >
+            </div>
+            </div>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h5>or KGs</h5>
+            <input [(ngModel)]="orKgs" name="orKgs"(keyup)="orKgsToStoneAndPound()" type="number" step="any" class="form-control" >
+            </div>
+            </div>
         </div>
-      </div>
 
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label for="pounds" class="text-center center-block">Pounds</label>
-          <input [(ngModel)]="pounds" name="pounds"(keyup.enter)=" StoneAndPoundToKgs()" type="number" step="any" class="form-control" >
+        <div class="row">
+            <h3>Enter Your Height</h3>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h5>Feet</h5>
+            <input [(ngModel)]="feet" name="feet" (keyup)="feetToMeters()" type="number" step="any" class="form-control" >
+            </div>
+            </div>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h5>Inches</h5>
+            <input [(ngModel)]="inches" name="inches"(keyup)="feetAndInchesToMeters()" type="number" step="any" class="form-control" >
+            </div>
+            </div>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h5>or Meters</h5>
+            <input [(ngModel)]="orMeters" name="orMeters"(keyup)="orMetersTofeetAndInches()" type="number" step="any" class="form-control" >
+            </div>
+            </div>
         </div>
-      </div>
-
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label for="orKgs" class="text-center center-block">or KGs</label>
-          <input [(ngModel)]="orKgs" name="orKgs"(keyup.enter)="orKgsToStoneAndPound()" type="number" step="any" class="form-control" >
+        <button type="button" class="btn btn-primary"  (click)="BMICalculation()">Calculate BMI</button>
+        <h6>Enter your weight either in stones/ pounds or kilograms and your height either in feet/ inches or meters</h6>
+        <div align=left>
+            <h4>Result:</h4>
         </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <h3 class="text-center">And Your Height</h3>
-
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label for="feet" class="text-center center-block">Feet</label>
-          <input [(ngModel)]="feet" name="feet" (keyup.enter)="FeetToMetres()" type="number" step="any" class="form-control" >
+        <div id="result">
+            <p>Your BMI is {{bmi}}, this means that you are {{type}}</p>
         </div>
-      </div>
-
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label for="inches" class="text-center center-block">Inches</label>
-          <input [(ngModel)]="inches" name="inches"(keyup.enter)="inchesToMeters()" type="number" step="any" class="form-control" >
-          </div>
-      </div>
-
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label for="meters" class="text-center center-block">or Meters</label>
-          <input [(ngModel)]="orMeters" name="orMeters"(keyup.enter)="feetAndInchesToMeters()" type="number" step="any" class="form-control" >
-        </div>
-      </div>
-    </div>
-
-    <div class="text-center">
-      <button class="btn btn-primary">Calculate BMI</button>
-    </div>
-
-    <div class="instruction text-center">
-      <p>Enter your weight either in stones/pounds or kilograms and your height either in feet/inches or meters.</p>
-    </div>
-  </form>
-
-  <div class="bmi-result">
-    <label>Result:</label>
-    <div class="well text-center">
-      <h2>Your Estimated BMI is 23.9, this is in the <span>normal range.</span></h2>
-    </div>
-  </div>
-  <router-outlet></router-outlet>
-</section>
+  
+    </form>
+</div>
